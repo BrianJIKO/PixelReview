@@ -1,0 +1,679 @@
+/*
+  font-family: "Open Sans", sans-serif;
+  font-family: "PT Serif", serif;
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+body {
+    font-family: "PT Serif", serif;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.header {
+    background-image: url(FotosPagina/b1.gif);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0;
+    position: relative;
+}
+
+
+.navbar-container {
+    background-color: #ffffff;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.menu img {
+    height: 50px;
+}
+
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.menu ul li {
+    position: relative;
+    float: left;
+}
+
+
+.menu ul li a {
+    font-size: 14px;
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    display: block;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+}
+
+
+.menu ul li a:hover {
+    border-bottom: 2px solid #000;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+
+.dropdown-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.dropdown-content ul li {
+    padding: 10px;
+    text-align: left;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Estilos del contenido del encabezado */
+.header-content {
+    text-align: center;
+    height: 50%;
+}
+
+
+.header-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.header-txt h1 {
+    font-size: 85px;
+    line-height: 1;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+}
+
+
+.header-txt p {
+    font-size: 17px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 35px;
+}
+
+
+.btn-container {
+    text-align: center;
+}
+
+
+.btn-1 {
+    padding: 11px 35px;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.btn-container .btn-1:hover {
+    background-color: #928e8e;
+    color: #ffffff;
+}
+
+
+
+
+.about {
+    padding: 100px 0;
+    background-color: #ffffff;
+
+
+}
+
+
+.about-content{
+display: flex;
+align-items: center;
+}
+
+
+.about-txt p {
+    margin-bottom: 20px; /* Agrega un margen inferior de 20px entre los párrafos */
+}
+
+
+.about-txt {
+    align-items: right;
+    flex-basis:50% ;
+    padding-left: 35px;
+}
+
+
+
+
+.btn-2 {
+    padding: 11px 35px;
+    border: 2px solid #928e8e;
+    color: #928e8e;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+.btn-container .btn-2:hover{
+    background-color: #928e8e;
+    color: #ffffff;
+}
+
+
+.about-img {
+    flex-basis: 50%;
+}
+
+
+.about-img {
+    border-radius: 15px;
+}
+
+
+.separador {
+    background-color: #ffdd00; /* Fondo amarillo */
+    text-align: center; /* Centra el contenido */
+    padding: 50px 0; /* Añade un espacio interno */
+}
+
+
+.separador img {
+    max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
+    height: auto; /* Mantiene la relación de aspecto */
+}
+
+
+.tutoriales-trucos {
+    padding: 100px 0;
+    background-color: #ffffff;
+}
+
+
+.tutoriales-trucos h2 {
+    font-size: 55px;
+    text-align: center;
+}
+
+
+.Tutoriales-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+.Tutoriales-content p {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    max-width: 900px; /* Ancho máximo del texto */
+    margin-left: auto; /* Centra el texto horizontalmente */
+    margin-right: auto;
+   
+}
+
+
+.tutorial-1,
+.tutorial-2,
+.tutorial-3 {
+    flex-basis: calc(33.33% - 40px);
+    margin: 0 20px;
+    text-align: center;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Agregar filtro de blanco y negro a las imágenes */
+.tutorial-1 img.face,
+.tutorial-2 img.face,
+.tutorial-3 img.face {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    filter: grayscale(100%); /* Imagen en blanco y negro */
+    transition: filter 0.8s ease; /* Agregar transición para suavizar el efecto */
+}
+
+
+/* Al pasar el cursor sobre la imagen, eliminar el filtro de blanco y negro */
+.tutorial-1 img.face:hover,
+.tutorial-2 img.face:hover,
+.tutorial-3 img.face:hover {
+    filter: grayscale(0%); /* Imagen a color */
+}
+
+
+/* Estilos adicionales de texto y botones */
+.tutorial-txt h4,
+.tutorial-2 > div h4,
+.tutorial-3 > div h4 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+
+.tutorial-txt p,
+.tutorial-2 > div p,
+.tutorial-3 > div p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+
+.btn-container {
+    text-align: center;
+    margin-top: 25px;
+}
+
+
+.btn-container .btn-3,
+.btn-container .btn-4,
+.btn-container .btn-5 {
+    padding: 11px 35px;
+    border: 2px solid #928e8e;
+    color: #a39999;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.btn-container .btn-3:hover,
+.btn-container .btn-4:hover,
+.btn-container .btn-5:hover {
+    background-color: #928e8e;
+    color: #ffffff;
+}
+
+
+.fanarts {
+    padding: 100px 0;
+    background-color: yellow;
+}
+
+
+.fanarts-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribuir los elementos en dos columnas */
+}
+
+
+.fanart-info {
+    flex-basis: 35%; /* Tamaño de la parte de texto */
+    padding-right: 20px;
+}
+
+
+.fanart-info h2 {
+    color: black;
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+
+.fanart-info p {
+    color: black;
+    margin-bottom: 20px;
+}
+
+
+.btn-container {
+    margin-bottom: 20px;
+}
+
+
+.btn-6 {
+    padding: 10px 20px;
+    border: 2px solid black;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.btn-6:hover {
+    background-color: black;
+    color: white;
+}
+
+
+.images-content {
+    flex-basis: 65%; /* Tamaño de la parte de imágenes */
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden; /* Ocultar cualquier desbordamiento de las imágenes */
+}
+
+
+.fanart {
+    position: relative;
+    width: calc(50% - 10px); /* Ajustar el ancho para dos columnas y agregar espacio */
+    margin-right: 5px; /* Espacio entre las imágenes */
+    margin-bottom: 20px; /* Espacio inferior entre las imágenes */
+    border-radius: 15px; /* Bordes más redondeados */
+    overflow: hidden; /* Evitar que las imágenes se desborden */
+}
+
+
+.art {
+    width: 100%;
+    height: 100%; /* Permitir que la altura se ajuste automáticamente */
+    object-fit: cover;
+    border-radius: 10px; /* Bordes más redondeados */
+    transition: transform 0.3s; /* Transición suave del efecto de zoom */
+}
+
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+
+.fanart:hover .overlay {
+    opacity: 1;
+}
+
+
+.fanart:hover .art {
+    transform: scale(1.1); /* Hacer zoom dentro de la imagen */
+}
+
+
+.reseñas {
+    background-color: white;
+    padding: 100px 0;
+}
+
+
+.reseñas h2 {
+    text-align: center;
+    font-size: 55px;
+    margin-bottom: 40px;
+}
+
+
+.reseñas-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.reseña-1 {
+    flex-basis: 30%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+.reseña-1 img {
+    border-radius: 50%; /* Marco redondo */
+    width: 150px; /* Ajustar el tamaño de la imagen */
+    height: 150px;
+    margin-bottom: 20px;
+    transition: transform 0.8s ease;
+}
+.reseña-1:hover {
+    transform: scale(1.1); /* Zoom al pasar el cursor */
+}
+
+
+.reseña-1 p {
+    margin-bottom: 20px;
+}
+
+
+.reseña-1 span {
+    font-style: italic;
+    color: #888;
+}
+
+
+.fanart-button {
+    text-align: center;
+}
+
+
+.btn-7 {
+    padding: 10px 20px;
+    border: 2px solid yellow; /* Botón de color amarillo */
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.btn-7:hover {
+    background-color: yellow;
+    color: rgb(0, 0, 0);
+}
+
+
+.contact {
+    padding: 100px 0 80px; /* Reducir el padding inferior */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.contact-content {
+    display: flex;
+    justify-content: center; /* Centrar los elementos horizontalmente */
+}
+
+
+.left-column,
+.right-column {
+    flex-basis: 50%;
+}
+
+
+.right-column p {
+    color: #fff;
+    text-align: center;
+    margin-top: 20px; /* Añadir espacio superior */
+    line-height: 1.6; /* Ajustar el interlineado */
+    padding: 0 150px; /* Reducir el padding horizontal */
+}
+
+
+.contact-form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+.contact-form textarea {
+    resize: none;
+}
+
+
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #f8c242;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.contact-form button:hover {
+    background-color: #f3b800;
+}
+
+
+.contact h2 {
+    color: #fff;
+    text-align: center;
+}
+
+
+.contact p {
+    color: #fff;
+    text-align: center;
+    margin-top: 20px; /* Añadir espacio superior */
+    line-height: 1.6; /* Ajustar el interlineado */
+}
+
+
+.footer {
+    padding: 50px 0;
+}
+
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Alinear elementos en la parte superior */
+}
+
+
+
+
+.footer-content .left-column img {
+    width: 200px; /* Ajustar el tamaño del logo */
+}
+
+
+.footer-content .center-column {
+    text-align: center;
+}
+
+
+.footer-content .center-column a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin: 5px;
+}
+
+
+.footer-content .center-column a:hover {
+    text-decoration: underline;
+}
+
+
+.footer-content .right-column {
+    text-align: center; /* Alineación del texto a la izquierda */
+   
+}
+
+
+.footer-content .right-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+.footer-content .right-column ul li {
+    margin-bottom: 10px;
+}
+
+
+.footer-content .right-column ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+
+.footer-content .right-column ul li a:hover {
+    text-decoration: underline;
+}
