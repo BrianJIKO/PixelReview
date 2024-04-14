@@ -7,17 +7,139 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 
+/* Reset básico para estandarizar estilos en todos los navegadores */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'PT Serif', serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    scroll-behavior: smooth; /* Hace que el scroll entre secciones sea suave */
+}
+
+a {
+    color: #007bff;
     text-decoration: none;
-    list-style: none;
 }
 
 
-body {
-    font-family: "PT Serif", serif;
+
+.navbar a {
+    color: white;
+    padding: 0 15px;
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    background-color: #f9f9f9;
+    color: black;
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
+/* Main Content Styles for Videojuegos */
+.videojuegos-contenido1, .videojuegos-contenido3 {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.videojuegos-contenido2, .videojuegos-contenido4 {
+    background-color: #ffdd00; /* Yellow background for specific sections */
+    display: flex;
+    flex-direction: row-reverse; /* Image on the right */
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.imagen-videojuego {
+    width: 45%; /* Control image width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.texto-videojuego {
+    width: 50%; /* Text width for wrapping */
+}
+
+/* Button Styles */
+.btn-videojuego {
+    display: inline-block;
+    background-color: transparent;
+    color: grey;
+    border: 2px solid grey;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-videojuego2 {
+    display: inline-block;
+    background-color: #000;
+    color: yellow;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 10px 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-videojuego:hover {
+    background-color: grey;
+    color: white;
+}
+
+.btn-videojuego2:hover {
+    background-color: yellow;
+    color: black;
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.footer img {
+    width: 50px; /* Example size, adjust as needed */
+    height: auto;
+}
+
+.footer a {
+    color: rgb(255, 255, 255);
+    padding: 0 10px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .header- .menu, .footer .container, .videojuegos-contenido1, .videojuegos-contenido2, .videojuegos-contenido3, .videojuegos-contenido4 {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar a, .footer a {
+        padding: 10px 0;
+    }
+
+    .imagen-videojuego, .texto-videojuego {
+        width: 100%;
+    }
+
+    .btn-videojuego {
+        width: 100%;
+        padding: 12px 0;
+    }
 }
 
 
@@ -44,6 +166,12 @@ img {
     min-height: 100vh;
     padding: 0;
     position: relative;
+    z-index: 10;
+}
+.header-fanart {
+    position: relative; /* Necesario para aplicar z-index */
+    z-index: 10; /* Mayor que el z-index de cualquier otro elemento en la misma stacking context */
+    background: #fff; /* o cualquier otro estilo que necesites para tu header */
 }
 
 .header .fanarts {
@@ -204,6 +332,7 @@ align-items: center;
     align-items: right;
     flex-basis:50% ;
     padding-left: 35px;
+    text-align: justify;
 }
 
 
@@ -487,6 +616,11 @@ align-items: center;
     flex-basis: 30%;
     text-align: center;
     margin-bottom: 40px;
+    
+}
+
+.reseña-1 p{
+    text-align: justify;
 }
 
 
@@ -727,37 +861,37 @@ align-items: center;
     transform: scale(1.1); /* Opcional: efecto de zoom al pasar el mouse sobre la imagen */
 }
 
-@media (max-width: 768px) {
-    .banner-fanarts {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .fanarts-text, .fanarts-gallery {
-        max-width: 100%;
-    }
-
-    .fanarts-text {
-        margin-bottom: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .fanart-item {
-        width: 100%; /* Un elemento por fila en pantallas muy pequeñas */
-    }
-}
-
 .banner-fanarts {
     display: flex;
     align-items: right;
     justify-content: space-around;
+    height: 900px;
+    width: auto;
     padding: 50px 20px;
+    background-image: url('FotosPagina/22b22287602523.5dbd29081561d.gif');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
     background-position: center;
     color: #fff;
     text-align: left; /* Alinea el texto a la izquierda */
 }
+
+.banner-fanarts::before {
+    content: ""; /* Necesario para generar el pseudo-elemento */
+    position: absolute; /* Posiciona absolutamente dentro de .banner-fanarts */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: 60px;
+    width: auto;
+    height: 840px;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con 50% de opacidad */
+    z-index: 1; /* Asegura que el pseudo-elemento se sitúe sobre el fondo y debajo del contenido */
+}
+
 .fanarts-text {
     max-width: 40%;
     color: #000; /* Ajusta el ancho del contenedor de texto */
@@ -787,10 +921,17 @@ align-items: center;
 }
 .banner-content {
     display: flex;
+    flex-direction: column;
     align-items: center; /* Asegura alineación vertical al centro */
-    justify-content: space-between; /* Espacio entre el texto y la galería */
+    justify-content: center; /* Espacio entre el texto y la galería */
     padding: 20px;
     color: #FFF;
+    text-align: center;
+    position: relative; /* Asegura que el contenido esté por encima del pseudo-elemento */
+    z-index: 2; /* Mayor que el z-index del ::before para mantener el contenido accesible */
+    padding: 40px 20px;
+    display: flex;
+    height: 100vh;
 }
 .fanarts-intro {
     flex: 1; /* Ocupa el espacio necesario, ajusta según necesidad */
@@ -800,7 +941,7 @@ align-items: center;
     display: flex;
     align-items: center; /* Centra verticalmente */
     justify-content: center; /* Centra horizontalmente */
-    background-image: url('FotosPagina/b2.jpg');
+    background-image: url('FotosPagina/csgololr6.png');
     background-size: cover;
     background-position: center;
     color: #FFFFFF; /* Asegúrate de que este color contraste bien con tu imagen de fondo */
@@ -896,4 +1037,152 @@ align-items: center;
     display: inline-block; /* O cualquier estilo de botón que prefieras */
     margin-top: 20px;
     /* Añade más estilos a tu botón aquí */
+}
+
+.banner-content h1, .banner-content h2, .banner-content p, .banner-content div {
+    margin-bottom: 10px; /* Añade un espacio entre los elementos */
+}
+
+.banner-content h2 {
+    font-size: 80px;
+    font-style: italic;
+}
+.banner-content h1 {
+    font-size: 24px;
+}
+
+.banner-content h3 {
+    font-size: 48px;
+    margin: auto;
+}
+.banner-content h4{
+    font-size: 16px;
+    font-weight: 100;
+    font-stretch: extra-expanded;
+}
+
+.btn-notificar {
+    border: 2px solid grey; /* Borde gris */
+    background-color: transparent; /* Fondo transparente */
+    color: grey; /* Texto gris */
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-out; /* Transición suave para efectos de hover */
+}
+
+.btn-notificar:hover {
+    background-color: grey; /* Fondo gris al pasar el mouse */
+    color: white; /* Texto blanco al pasar el mouse */
+}
+
+.closing-banner {
+    width: 100%; /* Esto asegura que el banner use todo el ancho disponible */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que exceda el tamaño del contenedor */
+    display: block; /* Elimina cualquier posible margen o padding extraño */
+    background-color: #000;
+    height: 400px;
+    align-items: center;
+    text-align: center;
+}
+
+.closing-banner .container {
+    width: 100%; /* Asegura que el contenedor interno también use todo el ancho disponible */
+    margin: 0 auto; /* Centra el contenedor internamente y asegura que no tenga margen extra */
+    display: flex; /* Establece flexbox para distribuir espacio horizontalmente */
+    justify-content: space-between; /* Distribuye el espacio equitativamente entre los elementos */
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+    text-align: center; /* Centra el texto horizontalmente */
+    padding: 20px 0; /* Añade algo de padding vertical */
+}
+
+.game-entry {
+    margin-top: 100px;
+    flex-grow: 1; /* Hace que cada entrada de juego crezca equitativamente */
+    z-index: 10;
+    align-items: center;
+    text-align: center;
+}
+
+.game-entry h1 {
+    font-size: 55px; /* Tamaño grande para los números */
+    margin-bottom: 0.5em; /* Espacio entre el número y el subtítulo */
+    color: white;
+}
+
+.game-entry p {
+    font-size: 24px; /* Tamaño adecuado para los subtítulos */
+    color: white;
+}
+
+.closing-banner::before{
+content: ""; /* Necesario para generar el pseudo-elemento */
+position: absolute; /* Posiciona absolutamente dentro de .banner-fanarts */
+top: 2060px;
+left: 0;
+right: 0;
+bottom: 0;
+margin-top: 60px;
+width: auto;
+height: 400px;
+background: rgba(0, 0, 0, 0.5); /* Color negro con 50% de opacidad */
+z-index: 1; /* Asegura que el pseudo-elemento se sitúe sobre el fondo y debajo del contenido */
+}
+
+/* Estilos Base */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive para tablets */
+@media (max-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .header-content, .about-content, .Tutoriales-content, .fanarts-content, .reseñas-content {
+        padding: 20px;
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+    .navbar-container {
+        flex-direction: column;
+    }
+
+    .dropdown-content {
+        position: static;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: flex;
+    }
+
+    .btn-container {
+        width: 100%;
+        text-align: center;
+    }
+
+    .about-img, .tutorial-1, .tutorial-2, .tutorial-3 {
+        display: none;
+    }
 }
