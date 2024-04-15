@@ -1186,3 +1186,69 @@ img {
         display: none;
     }
 }
+
+/* Tutorial Grid Styles */
+/* Estilos para el contenedor principal que aloja todas las cajas */
+.tutorial-container {
+    display: flex;
+    flex-direction: column;  /* Organiza las filas de tutoriales verticalmente */
+    align-items: center;  /* Centra las filas horizontalmente en el contenedor */
+    margin: 120px auto;  /* Añade un margen automático horizontal para centrar el contenedor */
+    padding: 20px;
+    max-width: auto; /* Ancho máximo del contenedor */
+}
+
+.tutorial-container h1{
+    font-size: 22px;
+    font-style: italic;
+}
+
+.tutorial-container p{
+    font-size: 16px;
+    color: #888;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.tutorial-row {
+    display: flex;  /* Usa Flexbox para un layout flexible de las cajas */
+    justify-content: space-evenly;  /* Distribuye los elementos uniformemente en la línea horizontal */
+    width: 100%;  /* Asegura que la fila use todo el ancho del contenedor */
+    margin-bottom: 20px;  /* Espacio entre las filas de tutoriales */
+}
+
+.tutorial-box {
+    width: 30%;  /* Ajusta este valor para controlar el ancho de cada caja */
+    transition: transform 0.3s ease, filter 0.3s ease;  /* Transiciones suaves para efectos visuales */
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra ligera para resaltar las cajas */
+    overflow: hidden;  /* Oculta cualquier contenido que se desborde de las cajas */
+    border: 2px solid #ccc; /* Borde sólido con un color gris claro */
+    border-radius: 30px;
+}
+
+.tutorial-box:hover img {
+    transform: scale(1.1);  /* Aumenta la imagen un 10% durante el hover */
+    filter: grayscale(0);  /* Elimina la escala de grises para mostrar la imagen a color */
+}
+
+.tutorial-image {
+    width: 100%;  /* Las imágenes cubren completamente el ancho de sus cajas */
+    height: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;  /* Efectos suaves al cambiar */
+    filter: grayscale(100%);  /* Comienza en blanco y negro */
+}
+
+.tutorial-text {
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+
+
+
+
+
+
