@@ -1246,6 +1246,123 @@ img {
     color: #333;
 }
 
+/* Estilos Comunes */
+.header-, .footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Banner Principal */
+.community-banner {
+    background-image: url('FotosPagina/59671-3840x2160-pixel-art-background-image-desktop-4k.jpg');
+    background-size: cover;
+    height: 500px;
+    color: white;
+    text-align: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.community-banner h1{
+    margin: 180px;
+    text-align: center;
+    align-items: center;
+    font-size: 60px;
+    font-style: italic;
+    font-weight: 100;
+}
+
+/* Descripción de la Comunidad */
+.community-description p {
+    text-align: center;
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 18px;
+}
+
+/* Cajas de Características */
+.community-features .feature-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 15px;
+}
+
+
+.community-features h2{
+    font-size: 45px;
+    color: #000;
+    font-style: italic;
+    margin-left: 25px;
+}
+
+.community-features p{
+    font-size: 18px;
+    text-align: justify;
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+.yellow-background {
+    background-color: #ffdd00;  /* Fondo amarillo para el primer banner */
+}
+
+.feature-box img {
+    width: 50%;
+}
+
+.feature-text {
+    width: 45%;
+}
+.community-join{
+    background-image: url('FotosPagina/PbMAjX1.gif');
+    height: 600px;
+    align-items: center;
+}
+
+.community-join h2{
+    padding-top: 80px;
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    font-style: italic;
+}
+
+.community-join h3{
+    color: yellow;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Formulario de Registro */
+.community-join form {
+    text-align: center;
+    max-width: 500px;
+    margin: 50px auto;
+    
+}
+
+.community-join input[type="text"],
+.community-join input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.community-join .submit-btn {
+    border: 2px solid grey;
+    color: grey;
+    background: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.community-join .submit-btn:hover {
+    background-color: grey;
+    color: white;
+}
 
 
 
