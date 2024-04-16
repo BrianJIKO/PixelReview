@@ -1121,7 +1121,7 @@ align-items: center;
 .closing-banner::before{
 content: ""; /* Necesario para generar el pseudo-elemento */
 position: absolute; /* Posiciona absolutamente dentro de .banner-fanarts */
-top: 2060px;
+top: 2100px;
 left: 0;
 right: 0;
 bottom: 0;
