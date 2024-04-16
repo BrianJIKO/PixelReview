@@ -12,6 +12,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 body, html {
@@ -26,8 +27,6 @@ a {
     color: #007bff;
     text-decoration: none;
 }
-
-
 
 .navbar a {
     color: white;
@@ -306,6 +305,34 @@ img {
     color: #ffffff;
 }
 
+@media only screen and (max-width: 768px) {
+    .header {
+        min-height: 50vh;
+        padding: 60px 0;
+    }
+
+    .menu img {
+        height: auto;
+        max-width: 100%;
+    }
+
+    .menu ul li a {
+        padding: 10px;
+    }
+
+    .header-txt h1 {
+        font-size: 48px;
+    }
+
+    .header-txt p {
+        font-size: 14px;
+    }
+
+    .btn-1 {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
 
 
 
@@ -816,7 +843,7 @@ align-items: center;
     text-decoration: underline;
 }
 
-/* Añade esto al archivo style.css que ya tienes */
+
 .comunidad-content {
     text-align: center;
     padding: 50px 0;
@@ -1363,6 +1390,9 @@ img {
     background-color: grey;
     color: white;
 }
+
+/*estilos movil */
+/*index movil*/
 
 
 
