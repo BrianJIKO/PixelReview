@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-
     <header class="header">
         <div class="navbar-container">
             <div class="menu container">
@@ -47,18 +45,11 @@
             </div>
         </div>
     </header>
-   
-
 
     <section class="about">
-
-
         <div class="about-content container">
-
-
             <div class="about-txt">
                 <img src="FotosPagina/logo.png" alt="">
-               
                 <p>
                     En Pixel Review, nos dedicamos a desentrañar los misterios del vasto universo de los videojuegos.
                     Somos más que una plataforma de reseñas; somos una comunidad apasionada de jugadores,
@@ -66,11 +57,7 @@
                     Enfocados en la calidad y la autenticidad, nos esforzamos por proporcionar reseñas detalladas
                     y tutoriales útiles que amplíen tu experiencia de juego.
                     Creemos que cada píxel cuenta en la creación y disfrute de un juego, y estamos aquí para explorar esos detalles que hacen que cada título sea único.
-
-
                 </p>
-
-
                 <p>
                     Acompáñanos en este viaje pixelado mientras exploramos nuevos lanzamientos, desentrañamos trucos, y construimos una comunidad que
                     celebra la diversidad y la emoción que los videojuegos ofrecen.
@@ -86,11 +73,10 @@
         </div>
     </section>
 
-
     <section class="separador">
         <img src="FotosPagina/logoAmarillo.png" alt="Logo Amarillo">
     </section>
-   
+
     <section class="tutoriales-trucos">
         <h2>Trucos y tutoriales</h2>
         <div class="Tutoriales-content container">
@@ -99,7 +85,6 @@
                 te sumergirás en un tesoro de conocimientos diseñados
                 para elevar tu experiencia a nuevas alturas.
             </p>
-   
             <div class="tutorial-1">
                 <img class="face" src="FotosPagina/b7.jpg" alt="">
                 <div class="tutorial-txt">
@@ -114,7 +99,6 @@
                     </div>
                 </div>
             </div>
-   
             <div class="tutorial-2">
                 <img class="face" src="FotosPagina/b8.jpg" alt="">
                 <div>
@@ -128,7 +112,6 @@
                     </div>
                 </div>
             </div>
-   
             <div class="tutorial-3">
                 <img class="face" src="FotosPagina/b9.jpg" alt="">
                 <div>
@@ -144,8 +127,6 @@
             </div>
         </div>  
     </section>
-   
-
 
     <section class="fanarts">
         <div class="fanarts-content container">
@@ -162,7 +143,7 @@
                     <a href="fanarts.html" class="btn-6">Explorar</a>
                 </div>
             </div>
-   
+
             <div class="images-content container">
                 <div class="fanart">
                     <img class="art" src="FotosPagina/b10.jpg" alt="">
@@ -171,7 +152,7 @@
                         <p>By LunaPink</p>
                     </div>
                 </div>
-   
+
                 <div class="fanart">
                     <img class="art" src="FotosPagina/b12.jpg" alt="">
                     <div class="overlay">
@@ -182,10 +163,6 @@
             </div>
         </div>
     </section>
-   
-
-
-
 
     <section class="reseñas" style="background-color: white;">
         <h2>Reseñas de videojuegos</h2>
@@ -199,7 +176,6 @@
                 </p>
                 <span>Juanito_Gamer, Valorant</span>
             </div>
-           
             <div class="reseña-1">
                 <img class="reseña" src="FotosPagina/b14.jpg" alt="">
                 <p>
@@ -209,7 +185,6 @@
                 </p>
                 <span>BlackLara13, Minecraft</span>
             </div>
-   
             <div class="reseña-1">
                 <img class="reseña" src="FotosPagina/b15.jpg" alt="">
                 <p>
@@ -225,8 +200,6 @@
             <a href="comunidad.html" class="btn-7">Explorar</a>
         </div>
     </section>
-   
-
 
     <section class="contact" style="background-image: url('FotosPagina/b16.gif');">
         <div class="contact-content">
@@ -249,8 +222,7 @@
             </div>
         </div>
     </section>
-   
-   
+
     <footer class="footer" style="background-color: #ffdd00;">
         <div class="footer-content container">
             <div class="left-column">
@@ -274,5 +246,42 @@
             </div>
         </div>
     </footer>
+
+         <!-- Cookie Consent -->
+    <div id="cookieConsent">
+        <div id="cookieConsentContainer">
+            <h2>Este sitio usa cookies</h2>
+            <p>Usamos cookies para asegurar que te damos la mejor experiencia en nuestro sitio web. <a href="#">Más información</a></p>
+            <button id="acceptCookies" class="btn">Aceptar</button>
+        </div>
+    </div>
+
+    <!-- Incluir el archivo JavaScript para manejar las cookies -->
+    <script src="cookies.js"></script>
+
+    <style>
+        #cookieConsent {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            display: none;
+            z-index: 1000;
+        }
+        #cookieConsentContainer {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        #cookieConsent button {
+            background-color: #ffdd00;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
 </body>
 </html>
