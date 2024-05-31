@@ -9,20 +9,20 @@
         .login-form {
             display: flex;
             align-items: center;
-            gap: 5px; /* Reducir el espacio entre los elementos */
+            gap: 5px;
         }
         .login-form input {
-            padding: 3px; /* Reducir el relleno de los campos de entrada */
-            font-size: 12px; /* Reducir el tamaño de la fuente */
+            padding: 3px;
+            font-size: 12px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            width: 100px; /* Ajustar el ancho de los campos */
+            width: 100px;
         }
         .login-form button {
             background-color: #ffdd00;
             border: none;
-            padding: 3px 5px; /* Reducir el relleno del botón */
-            font-size: 12px; /* Reducir el tamaño de la fuente */
+            padding: 3px 5px;
+            font-size: 12px;
             border-radius: 4px;
             cursor: pointer;
         }
@@ -34,14 +34,58 @@
             color: green;
             margin-top: 10px;
         }
+        body {
+            background: url('FotosPagina/fondo.gif') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .containerM {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+        .Publicontainer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+        .fanart-item {
+            flex: 1 1 calc(33.333% - 20px);
+            box-sizing:border-box;
+            margin-bottom:10px;
+        }
+        .fanart-item img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+        }
     </style>
+    <script>
+        function loadFanarts() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'load_fanarts.php', true);
+            xhr.onload = function() {
+                if (this.status === 200) {
+                    document.getElementById('Publicontainer').innerHTML = this.responseText;
+                }
+            }
+            xhr.send();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadFanarts();
+        });
+    </script>
 </head>
 <body>
     <?php include 'session.php'; ?>
-    <header class="header-fanart">
+    <header class="header-">
         <div class="navbar-container">
             <div class="menu container">
-                <img src="FotosPagina/logo.png" alt="Logo de Pixel Review">
+                <img src="FotosPagina/logo.png" alt="Pixel Review Logo">
                 <nav class="navbar">
                     <ul>
                         <li><a href="index.php">INICIO</a></li>
@@ -84,7 +128,7 @@
             <?php
             if (isset($_SESSION['username'])) {
                 echo '<h2>Sube tu Fan Art</h2>';
-                echo '<form action="upload_fanart.php" method="post" enctype="multipart/form-data">
+                echo '<form id="upload-form" action="upload_fanart.php" method="post" enctype="multipart/form-data">
                     <input type="file" name="fanart" required>
                     <button type="submit">Subir</button>
                 </form>';
@@ -95,34 +139,9 @@
         </div>
     </section>
 
-    <main class="container">
-        <h2>Galería de Fan Arts</h2>
-        <div class="gallery">
-            <?php
-            // Conectar a la base de datos
-            $conn = new mysqli("pixelreview.infinityfreeapp.com", "if0_36648928", "t3LLpyZLhT1Qf", "if0_36648928_fan_arts");
-
-            // Verificar la conexión
-            if ($conn->connect_error) {
-                die("Conexión fallida: " . $conn->connect_error);
-            }
-
-            // Obtener los fanarts de la base de datos
-            $sql = "SELECT username, image_path, upload_date FROM fanarts ORDER BY upload_date DESC";
-            $result = $conn->query($sql);
-
-            if ($result && $result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo '<div class="fanart-item">';
-                    echo '<img src="' . htmlspecialchars($row['image_path']) . '" alt="Fan Art">';
-                    echo '<p>Subido por: ' . htmlspecialchars($row['username']) . ' el ' . htmlspecialchars($row['upload_date']) . '</p>';
-                    echo '</div>';
-                }
-            }
-
-            $conn->close();
-            ?>
-        </div>
+    <main class="containerM">
+        <h2 class="hidden">Galería de Fan Arts</h2>
+        <div id="Publicontainer" class="Publicontainer"></div>
     </main>
 
     <footer class="footer" style="background-color: #ffdd00;">
