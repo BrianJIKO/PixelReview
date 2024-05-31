@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
+    <header class="header-">
         <div class="navbar-container">
             <div class="menu container">
                 <img src="FotosPagina/logo.png" alt="Pixel Review Logo">
@@ -19,10 +19,10 @@
                             <a href="videojuegos.html">VIDEOJUEGOS</a>
                             <div class="dropdown-content">
                                 <ul>
-                                    <li><a href="videojuegos.html#lol">LOL</a></li>
-                                    <li><a href="videojuegos.html#rss">RSS</a></li>
-                                    <li><a href="videojuegos.html#fortnite">FORTNITE</a></li>
-                                    <li><a href="videojuegos.html#dota2">DOTA 2</a></li>
+                                    <li><a href="#lol">LOL</a></li>
+                                    <li><a href="#rss">RSS</a></li>
+                                    <li><a href="#fortnite">FORTNITE</a></li>
+                                    <li><a href="#dota2">DOTA 2</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -131,3 +131,28 @@
             </div>
         </div>
     </footer>
+
+    <!-- Incluir el archivo JavaScript para manejar las cookies -->
+    <script src="cookies.js"></script>
+
+    <style>
+        .login-form {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .login-form input {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .login-form button {
+            background-color: #ffdd00;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</body>
+</html>
