@@ -1,43 +1,34 @@
 <?php
-session_start(); // Iniciar la sesión
+session_start();
 
-// Configuración de la base de datos
-$servername = "localhost";
-$username = "root";
-$password = "Mendi23102001."; // Reemplaza "nueva_contraseña" con la contraseña correcta
-$dbname = "mi_base_de_datos";
+$servername = "sql303.infinityfree.com"; // Reemplaza "sqlXXX.epizy.com" con tu servidor de base de datos
+    $username = "if0_36648928"; // Reemplaza "epiz_XXX" con tu nombre de usuario de la base de datos
+    $password = "t3LLpyZLhT1Qf"; // Reemplaza "tu_contraseña" con tu contraseña de la base de datos
+    $dbname = "if0_36648928_fan_arts"; // Reemplaza "epiz_XXX_mi_base_de_datos" con tu nombre de la base de datos
 
-// Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificar conexión
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-// Obtener datos del formulario
-$user = $_POST['username'];
-$pass = $_POST['password'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-// Consultar la base de datos para el usuario
-$sql = "SELECT * FROM usuarios WHERE username = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $user);
-$stmt->execute();
-$result = $stmt->get_result();
+    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE username = ? AND password = ?");
+    $stmt->bind_param("ss", $username, $password);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    if (password_verify($pass, $row['password'])) { // Comparar contraseñas de forma segura
-        $_SESSION['username'] = $user; // Iniciar sesión
-        header("Location: index.php"); // Redirigir a la página de inicio
+    if ($result->num_rows > 0) {
+        $_SESSION['username'] = $username;
+        header("Location: index.php");
     } else {
-        header("Location: index.php?error=1"); // Contraseña incorrecta
+        header("Location: index.php?error=1");
     }
-} else {
-    header("Location: index.php?error=1"); // Usuario no encontrado
+    $stmt->close();
 }
 
-$stmt->close();
 $conn->close();
 ?>

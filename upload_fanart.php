@@ -6,10 +6,10 @@ if (!isset($_SESSION['username'])) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Configuración de la base de datos
-    $servername = "localhost";
-    $username = "root";
-    $password = "nueva_contraseña"; // Reemplaza "nueva_contraseña" con la contraseña correcta
-    $dbname = "mi_base_de_datos";
+    $servername = "sql303.infinityfree.com"; // Reemplaza "sqlXXX.epizy.com" con tu servidor de base de datos
+    $username = "if0_36648928"; // Reemplaza "epiz_XXX" con tu nombre de usuario de la base de datos
+    $password = "t3LLpyZLhT1Qf"; // Reemplaza "tu_contraseña" con tu contraseña de la base de datos
+    $dbname = "if0_36648928_fan_arts"; // Reemplaza "epiz_XXX_mi_base_de_datos" con tu nombre de la base de datos
 
     // Crear conexión
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -62,11 +62,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (move_uploaded_file($_FILES["fanart"]["tmp_name"], $target_file)) {
             // Insertar la información del fanart en la base de datos
             $stmt = $conn->prepare("INSERT INTO fanarts (username, image_path) VALUES (?, ?)");
+            if ($stmt === false) {
+                die("Error en la consulta: " . $conn->error);
+            }
             $stmt->bind_param("ss", $_SESSION['username'], $target_file);
             if ($stmt->execute()) {
+                echo "Subida exitosa";
                 header("Location: fanarts.php");
             } else {
-                echo "Error al guardar la información del fanart.";
+                echo "Error al guardar la información del fanart: " . $stmt->error;
             }
             $stmt->close();
         } else {

@@ -3,12 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comunidad - Pixel Review</title>
+    <title>Pixel Review</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .login-form {
+            display: flex;
+            align-items: center;
+            gap: 5px; /* Reducir el espacio entre los elementos */
+        }
+        .login-form input {
+            padding: 3px; /* Reducir el relleno de los campos de entrada */
+            font-size: 12px; /* Reducir el tamaño de la fuente */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100px; /* Ajustar el ancho de los campos */
+        }
+        .login-form button {
+            background-color: #ffdd00;
+            border: none;
+            padding: 3px 5px; /* Reducir el relleno del botón */
+            font-size: 12px; /* Reducir el tamaño de la fuente */
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+        .welcome-message {
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <?php include 'session.php'; ?>
-    <header class="header">
+    <header class="header1">
         <div class="navbar-container">
             <div class="menu container">
                 <img src="FotosPagina/logo.png" alt="Pixel Review Logo">
@@ -31,7 +61,7 @@
                         <li><a href="fanarts.php">FAN ARTS</a></li>
                     </ul>
                 </nav>
-                <?php>
+                <?php
                 if (isset($_SESSION['username'])) {
                     echo '<div class="welcome-message">Bienvenido, ' . htmlspecialchars($_SESSION['username']) . '!</div>';
                     echo '<form class="login-form" action="logout.php" method="post">

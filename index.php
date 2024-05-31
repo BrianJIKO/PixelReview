@@ -38,10 +38,11 @@
 </head>
 <body>
     <?php include 'session.php'; ?>
+
     <header class="header">
         <div class="navbar-container">
             <div class="menu container">
-                <img src="FotosPagina/logo.png" alt="Pixel Review Logo">
+                <img src="FotosPagina/logo.png" alt="Logo de Pixel Review">
                 <nav class="navbar">
                     <ul>
                         <li><a href="index.php">INICIO</a></li>
@@ -77,13 +78,19 @@
                 ?>
             </div>
         </div>
-    </header>
 
-    <?php if (isset($_GET['error'])): ?>
-        <div class="error-message">
-            Nombre de usuario o contraseña incorrectos.
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1>PIXEL REVIEW</h1>
+                <p>
+                    Desglosando el mundo de los videojuegos, píxel por píxel
+                </p>
+                <div class="btn-container">
+                    <a href="videojuegos.php" class="btn-1">Videojuegos</a>
+                </div>
+            </div>
         </div>
-    <?php endif; ?>
+    </header>
 
     <section class="about">
         <div class="about-content container">
@@ -103,7 +110,7 @@
                     ¡Gracias por unirte a nosotros en Pixel Review, donde cada píxel cuenta en la narrativa de tu experiencia gamer!
                 </p>
                 <div class="btn-container">
-                    <a href="comunidad.html" class="btn-2">Mas información</a>
+                    <a href="comunidad.php" class="btn-2">Más información</a>
                 </div>
             </div>
             <div class="about-img">
@@ -134,7 +141,7 @@
                         ¡Prepárate para conquistar el Rift con confianza y habilidad!
                     </p>
                     <div class="btn-container">
-                        <a href="tutoriales.html" class="btn-3">Empezar</a>
+                        <a href="tutoriales.php" class="btn-3">Empezar</a>
                     </div>
                 </div>
             </div>
@@ -147,7 +154,7 @@
                         con confianza y habilidad!
                     </p>
                     <div class="btn-container">
-                        <a href="tutoriales.html" class="btn-4">Empezar</a>
+                        <a href="tutoriales.php" class="btn-4">Empezar</a>
                     </div>
                 </div>
             </div>
@@ -160,7 +167,7 @@
                         convierte en triunfo!
                     </p>
                     <div class="btn-container">
-                        <a href="tutoriales.html" class="btn-5">Empezar</a>
+                        <a href="tutoriales.php" class="btn-5">Empezar</a>
                     </div>
                 </div>
             </div>
@@ -179,10 +186,9 @@
                     pueden apoyar a estos talentosos creadores mediante donaciones.
                 </p>
                 <div class="btn-container">
-                    <a href="fanarts.html" class="btn-6">Explorar</a>
+                    <a href="fanarts.php" class="btn-6">Explorar</a>
                 </div>
             </div>
-
             <div class="images-content container">
                 <div class="fanart">
                     <img class="art" src="FotosPagina/b10.jpg" alt="">
@@ -191,7 +197,6 @@
                         <p>By LunaPink</p>
                     </div>
                 </div>
-
                 <div class="fanart">
                     <img class="art" src="FotosPagina/b12.jpg" alt="">
                     <div class="overlay">
@@ -236,7 +241,7 @@
             </div>
         </div>
         <div class="fanart-button">
-            <a href="comunidad.html" class="btn-7">Explorar</a>
+            <a href="comunidad.php" class="btn-7">Explorar</a>
         </div>
     </section>
 
@@ -276,75 +281,14 @@
             <div class="right-column">
                 <h2 style="font-size: 30px; text-align: center;">Enlaces</h2>
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="comunidad.html">Comunidad</a></li>
-                    <li><a href="videojuegos.html">Videojuegos</a></li>
-                    <li><a href="tutoriales.html">Tutoriales</a></li>
-                    <li><a href="fanarts.html">Fan Arts</a></li>
+                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="comunidad.php">Comunidad</a></li>
+                    <li><a href="videojuegos.php">Videojuegos</a></li>
+                    <li><a href="tutoriales.php">Tutoriales</a></li>
+                    <li><a href="fanarts.php">Fan Arts</a></li>
                 </ul>
             </div>
         </div>
     </footer>
-
-    <!-- Cookie Consent -->
-    <div id="cookieConsent">
-        <div id="cookieConsentContainer">
-            <h2>Este sitio usa cookies</h2>
-            <p>Usamos cookies para asegurar que te damos la mejor experiencia en nuestro sitio web. <a href="#">Más información</a></p>
-            <button id="acceptCookies" class="btn">Aceptar</button>
-        </div>
-    </div>
-
-    <script src="cookies.js"></script>
-
-    <style>
-        .login-form {
-            display: flex;
-            align-items: center;
-            gap: 5px; /* Reducir el espacio entre los elementos */
-        }
-        .login-form input {
-            padding: 3px; /* Reducir el relleno de los campos de entrada */
-            font-size: 12px; /* Reducir el tamaño de la fuente */
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width: 100px; /* Ajustar el ancho de los campos */
-        }
-        .login-form button {
-            background-color: #ffdd00;
-            border: none;
-            padding: 3px 5px; /* Reducir el relleno del botón */
-            font-size: 12px; /* Reducir el tamaño de la fuente */
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        #cookieConsent {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            text-align: center;
-            padding: 10px;
-            display: none;
-            z-index: 1000;
-        }
-        #cookieConsentContainer {
-            max-width: 960px;
-            margin: 0 auto;
-        }
-        #cookieConsent button {
-            background-color: #ffdd00;
-            color: black;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-        .error-message {
-            color: red;
-            text-align: center;
-            margin: 10px 0;
-        }
-    </style>
 </body>
 </html>

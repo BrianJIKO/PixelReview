@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php include 'session.php'; ?>
-    <header class="header">
+    <header class="header-">
         <div class="navbar-container">
             <div class="menu container">
                 <img src="FotosPagina/logo.png" alt="Pixel Review Logo">
@@ -114,7 +114,7 @@
     <script src="cookies.js"></script>
 
     <style>
-    .login-form {
+        .login-form {
             display: flex;
             align-items: center;
             gap: 5px; /* Reducir el espacio entre los elementos */
@@ -133,6 +133,14 @@
             font-size: 12px; /* Reducir el tamaño de la fuente */
             border-radius: 4px;
             cursor: pointer;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+        .welcome-message {
+            color: green;
+            margin-top: 10px;
         }
     </style>
 </body>
