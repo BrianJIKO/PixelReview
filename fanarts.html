@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header-fanart">
+    <header class="header">
         <div class="navbar-container">
             <div class="menu container">
-                <img src="FotosPagina/logo.png" alt="Logo de Pixel Review">
+                <img src="FotosPagina/logo.png" alt="Pixel Review Logo">
                 <nav class="navbar">
                     <ul>
                         <li><a href="index.html">INICIO</a></li>
@@ -30,6 +30,11 @@
                         <li><a href="fanarts.html">FAN ARTS</a></li>
                     </ul>
                 </nav>
+                <form class="login-form" action="login.php" method="post">
+                    <input type="text" name="username" placeholder="Usuario" required>
+                    <input type="password" name="password" placeholder="Contraseña" required>
+                    <button type="submit">Iniciar Sesión</button>
+                </form>
             </div>
         </div>
     </header>
