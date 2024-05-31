@@ -1,36 +1,36 @@
-// Función para establecer una cookie
-function setCookie(name, value, days) {
-    var expires = "";
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = name + "=" + (value || "") + expires + "; path=/";
-}
+document.addEventListener('DOMContentLoaded', (event) => {
+    const cookieConsent = document.getElementById('cookieConsent');
+    const acceptCookies = document.getElementById('acceptCookies');
 
-// Función para obtener una cookie
-function getCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-    }
-    return null;
-}
-
-// Manejo del aviso de cookies
-document.addEventListener("DOMContentLoaded", function () {
-    // Verificar si las cookies han sido aceptadas
-    if (!getCookie("cookiesAccepted")) {
-        document.getElementById("cookieConsent").style.display = "block";
+    if (!getCookie('cookiesAccepted')) {
+        cookieConsent.style.display = 'block';
     }
 
-    // Manejar la aceptación de cookies
-    document.getElementById("acceptCookies").onclick = function () {
-        setCookie("cookiesAccepted", "true", 365);
-        document.getElementById("cookieConsent").style.display = "none";
-    };
+    acceptCookies.addEventListener('click', () => {
+        setCookie('cookiesAccepted', true, 365);
+        cookieConsent.style.display = 'none';
+    });
 });
+
+function setCookie(name, value, days) {
+    const d = new Date();
+    d.setTime(d.getTime() + (days*24*60*60*1000));
+    const expires = "expires=" + d.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+function getCookie(name) {
+    const cname = name + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(cname) == 0) {
+            return c.substring(cname.length, c.length);
+        }
+    }
+    return "";
+}

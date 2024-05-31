@@ -50,6 +50,12 @@
         </div>
     </header>
 
+    <?php if (isset($_GET['error'])): ?>
+    <div class="error-message">
+        Nombre de usuario o contraseña incorrectos.
+    </div>
+    <?php endif; ?>
+
     <section class="about">
         <div class="about-content container">
             <div class="about-txt">
@@ -263,7 +269,7 @@
     <script src="cookies.js"></script>
 
     <style>
-            .login-form {
+        .login-form {
             display: flex;
             align-items: center;
             gap: 5px; /* Reducir el espacio entre los elementos */
@@ -304,6 +310,11 @@
             border: none;
             padding: 10px 20px;
             cursor: pointer;
+        }
+        .error-message {
+            color: red;
+            text-align: center;
+            margin: 10px 0;
         }
     </style>
 </body>
