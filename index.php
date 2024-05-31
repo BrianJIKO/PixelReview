@@ -290,5 +290,76 @@
             </div>
         </div>
     </footer>
+    <!-- Cookie Consent -->
+    <div id="cookieConsent">
+        <div id="cookieConsentContainer">
+            <h2>Este sitio usa cookies</h2>
+            <p>Usamos cookies para asegurar que te damos la mejor experiencia en nuestro sitio web. <a href="#">Más información</a></p>
+            <button id="acceptCookies" class="btn">Aceptar</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Función para establecer una cookie
+            function setCookie(name, value, days) {
+                var expires = "";
+                if (days) {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    expires = "; expires=" + date.toUTCString();
+                }
+                document.cookie = name + "=" + (value || "") + expires + "; path=/";
+            }
+
+            // Función para obtener una cookie
+            function getCookie(name) {
+                var nameEQ = name + "=";
+                var ca = document.cookie.split(';');
+                for(var i=0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            }
+
+            // Verificar si las cookies han sido aceptadas
+            if (!getCookie("cookiesAccepted")) {
+                document.getElementById("cookieConsent").style.display = "block";
+            }
+
+            // Manejar la aceptación de cookies
+            document.getElementById("acceptCookies").onclick = function() {
+                setCookie("cookiesAccepted", "true", 365);
+                document.getElementById("cookieConsent").style.display = "none";
+            };
+        });
+    </script>
+
+    <style>
+        #cookieConsent {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            display: none;
+            z-index: 1000;
+        }
+        #cookieConsentContainer {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        #cookieConsent button {
+            background-color: #ffdd00;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
 </body>
 </html>
