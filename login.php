@@ -28,14 +28,14 @@ $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    if ($row['password'] === $pass) { // Comparar contraseñas en texto plano (NO SEGURO PARA PRODUCCIÓN)
+    if (password_verify($pass, $row['password'])) { // Comparar contraseñas de forma segura
         $_SESSION['username'] = $user; // Iniciar sesión
-        header("Location: index.html"); // Redirigir a la página de inicio
+        header("Location: index.php"); // Redirigir a la página de inicio
     } else {
-        header("Location: index.html?error=1"); // Contraseña incorrecta
+        header("Location: index.php?error=1"); // Contraseña incorrecta
     }
 } else {
-    header("Location: index.html?error=1"); // Usuario no encontrado
+    header("Location: index.php?error=1"); // Usuario no encontrado
 }
 
 $stmt->close();

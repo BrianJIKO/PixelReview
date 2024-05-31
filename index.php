@@ -5,52 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixel Review</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .login-form {
+            display: flex;
+            align-items: center;
+            gap: 5px; /* Reducir el espacio entre los elementos */
+        }
+        .login-form input {
+            padding: 3px; /* Reducir el relleno de los campos de entrada */
+            font-size: 12px; /* Reducir el tamaño de la fuente */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100px; /* Ajustar el ancho de los campos */
+        }
+        .login-form button {
+            background-color: #ffdd00;
+            border: none;
+            padding: 3px 5px; /* Reducir el relleno del botón */
+            font-size: 12px; /* Reducir el tamaño de la fuente */
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+        .welcome-message {
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
+    <?php include 'session.php'; ?>
     <header class="header">
         <div class="navbar-container">
             <div class="menu container">
                 <img src="FotosPagina/logo.png" alt="Pixel Review Logo">
                 <nav class="navbar">
                     <ul>
-                        <li><a href="index.html">INICIO</a></li>
-                        <li><a href="comunidad.html">COMUNIDAD</a></li>
+                        <li><a href="index.php">INICIO</a></li>
+                        <li><a href="comunidad.php">COMUNIDAD</a></li>
                         <li class="dropdown">
-                            <a href="videojuegos.html">VIDEOJUEGOS</a>
+                            <a href="videojuegos.php">VIDEOJUEGOS</a>
                             <div class="dropdown-content">
                                 <ul>
-                                    <li><a href="videojuegos.html#lol">LOL</a></li>
-                                    <li><a href="videojuegos.html#rss">RSS</a></li>
-                                    <li><a href="videojuegos.html#fortnite">FORTNITE</a></li>
-                                    <li><a href="videojuegos.html#dota2">DOTA 2</a></li>
+                                    <li><a href="videojuegos.php#lol">LOL</a></li>
+                                    <li><a href="videojuegos.php#rss">RSS</a></li>
+                                    <li><a href="videojuegos.php#fortnite">FORTNITE</a></li>
+                                    <li><a href="videojuegos.php#dota2">DOTA 2</a></li>
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="tutoriales.html">TUTORIALES</a></li>
-                        <li><a href="fanarts.html">FAN ARTS</a></li>
+                        <li><a href="tutoriales.php">TUTORIALES</a></li>
+                        <li><a href="fanarts.php">FAN ARTS</a></li>
                     </ul>
                 </nav>
-                <form class="login-form" action="login.php" method="post">
-                    <input type="text" name="username" placeholder="Usuario" required>
-                    <input type="password" name="password" placeholder="Contraseña" required>
-                    <button type="submit">Iniciar Sesión</button>
-                </form>
-            </div>
-        </div>
-        <div class="header-content container">
-            <div class="header-txt">
-                <h1>PIXEL REVIEW</h1>
-                <p>
-                    Desglosando el mundo de los videojuegos, píxel por píxel
-                </p>
-                <div class="btn-container">
-                    <a href="videojuegos.html" class="btn-1">Videojuegos</a>
-                </div>
+                <?php
+                if (isset($_SESSION['username'])) {
+                    echo '<div class="welcome-message">Bienvenido, ' . htmlspecialchars($_SESSION['username']) . '!</div>';
+                    echo '<form class="login-form" action="logout.php" method="post">
+                        <button type="submit">Cerrar Sesión</button>
+                    </form>';
+                } else {
+                    echo '<form class="login-form" action="login.php" method="post">
+                        <input type="text" name="username" placeholder="Usuario" required>
+                        <input type="password" name="password" placeholder="Contraseña" required>
+                        <button type="submit">Iniciar Sesión</button>
+                    </form>';
+                }
+                ?>
             </div>
         </div>
     </header>
 
-
+    <?php if (isset($_GET['error'])): ?>
+        <div class="error-message">
+            Nombre de usuario o contraseña incorrectos.
+        </div>
+    <?php endif; ?>
 
     <section class="about">
         <div class="about-content container">
