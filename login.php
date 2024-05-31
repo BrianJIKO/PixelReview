@@ -4,7 +4,7 @@ session_start(); // Iniciar la sesión
 // Configuración de la base de datos
 $servername = "localhost";
 $username = "root";
-$password = ""; // La contraseña de MySQL, puede estar en blanco por defecto
+$password = "Mendi23102001."; // Reemplaza "nueva_contraseña" con la contraseña correcta
 $dbname = "mi_base_de_datos";
 
 // Crear conexión
